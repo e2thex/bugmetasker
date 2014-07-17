@@ -1,6 +1,7 @@
 <?php
-require_once "./BugMeTasker.php";
-require_once "./BugMeTaskerMessager.php";
+$dir = dirname(__FILE__);
+require_once $dir . "/BugMeTasker.php";
+require_once $dir . "/BugMeTaskerMessager.php";
 
 $action = isset($argv[1]) ? $argv[1] : NULL;
 $t = new BugMeTasker();
