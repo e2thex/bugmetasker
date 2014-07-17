@@ -9,7 +9,7 @@ class BugMeTasker {
   }
   function load() {
     $config = json_decode(file_get_contents($this->file));
-    $config = $config ?: array("running"=>TRUE, 'tasks' => array());
+    $config = $config ?: (object) array("running"=>TRUE, 'tasks' => array());
     $this->tasks = (array) $config->tasks;
     $this->running = $config->running;
   }
