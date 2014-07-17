@@ -3,7 +3,7 @@ class BugMeTasker {
   protected $inc;
   protected $tasks = array();
   protected $running = false;
-  function __construct($file= '/tmp/bmttasks', $inc = .25) {
+  function __construct($file= '~/.bmttasks', $inc = .25) {
     $this->inc = $inc;
     $this->file = $file;
   }
