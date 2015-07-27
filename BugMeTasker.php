@@ -39,7 +39,7 @@ class BugMeTasker {
     $this->load();
     switch($action) {
       case "new":
-        $new = exec("gmessage 'New Task' -entry");
+        $new = $messager->requestItem("New Task");
         $this->inc($new);
       break;
       case "clear":
