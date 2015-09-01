@@ -7,6 +7,7 @@ $action = isset($argv[1]) ? $argv[1] : NULL;
 $file = getenv("HOME") . "/.bmttasks";
 $t = new BugMeTasker($file);
 $t->load();
-$t->main($action, new GMessageMessager());
+$t->main($action, new OsascriptMessager());
+//$t->main($action, new GMessageMessager());
 $t->save();
 
