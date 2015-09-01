@@ -4,3 +4,5 @@ to have it run have cron run the bmt.php script with the first param cron every 
     FULLFUNPATH/bmt.php cron
 
 also you will have to run the command each morning so you can start it.
+
+There is also an alferdworkflow in the directory BugMeTracker.alferdworkflow that adds a bmt command to alferd
