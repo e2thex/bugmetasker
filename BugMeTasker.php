@@ -69,7 +69,9 @@ class BugMeTasker {
 
   function display_options($messager) {
     $msg = "What did you do in the last 15 mins?";
-    foreach($this->tasks as $name => $time) {
+    $display_tasks = $this->tasks;
+    ksort($display_tasks);
+    foreach($display_tasks as $name => $time) {
       $msg .="\n". $time."\t".$name;
       $messager->addButton($name);
     }
