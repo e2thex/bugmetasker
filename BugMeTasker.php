@@ -3,7 +3,7 @@ class BugMeTasker {
   protected $inc;
   protected $tasks = array();
   protected $running = false;
-  function __construct($file= '~/.bmttasks', $inc = .25) {
+  function __construct($file= '~/.bmttasks', $inc = .5) {
     $this->inc = $inc;
     $this->file = $file;
   }
@@ -54,7 +54,6 @@ class BugMeTasker {
       case "cancel":
       break;
       default:
-      default:
         $this->inc($action);
     }
   }
@@ -68,13 +67,16 @@ class BugMeTasker {
   }
 
   function display_options($messager) {
-    $msg = "What did you do in the last 15 mins?";
+    $msg = "What did you do in the last Pom?";
     $display_tasks = $this->tasks;
     ksort($display_tasks);
     foreach($display_tasks as $name => $time) {
       $msg .="\n". $time."\t".$name;
+      $sum += $time;
       $messager->addButton($name);
     }
+    $msg .="\n---";
+    $msg .="\n" . $sum . "\tTotal";
     $messager->setMessage($msg);
     $messager->addButton('clear');
     $messager->addButton('new');
